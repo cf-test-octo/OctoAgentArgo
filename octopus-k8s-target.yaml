@@ -11,7 +11,7 @@ spec:
     chart: kubernetes-agent
     targetRevision: "2.*.*"
     helm:
-      releaseName: octoagentcf
+      releaseName: octotargetcf
       parameters:
         - name: agent.acceptEula
           value: "Y"
@@ -24,11 +24,7 @@ spec:
         - name: agent.bearerToken
           value: "eyJhbGciOiJQUzI1NiIsImtpZCI6IjRmOGY0MWZiN2M5MTQ4YjliMjk1MGYyMGMwYWNlMTU4IiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL2pvaG55Lm9jdG9wdXMuYXBwIiwiaXNzIjoiaHR0cHM6Ly9qb2hueS5vY3RvcHVzLmFwcCIsImV4cCI6MTc0NTMxODE0MSwiaWF0IjoxNzQ1MzE0NTQxLCJuYmYiOjE3NDUzMTQ1NDEsImp0aSI6IjBiMjgyNWY4ZWU5ZTQ2MDc5MDdlMDYxMTM5ZTRlNWY3Iiwic3ViIjoiN2RkNjAxZTItYWM5Yi00N2VjLTg5MDQtYjcyZjM3NzIyYTdhIn0.LvBF85Jl0PNjSytAptKqTNYYqs92H29xHNjz4Q_tyDHcpVNP5WM2iK4Te95yDDSaqR2yXs2pJGxbbYbTuRubOTspx3ivcWTydhIcTdu_LENGiMuMBneBIEXK854QNZvPwrifEK4mww98_o2oAtQv68dTkV5_KwL0l2M-5zjTSNMabiV4TBRSPOImu45jm0gVp8yZaWOniJ5LEyNrVSAdFYtgQAj7LTfwjybhYYwIsf_2EnOgiXqwFDtCZSF3-ouLGMAGhUxSMfLKsvuWgpEKR3KTfmXEKEYvkiatNF3n7GzJhnBXkgAWhOGgUHkxQkP6UJv251Q-g63hnytzmIt1ig"
         - name: agent.name
-          value: "OctoAgentCF"
-        - name: agent.worker.enabled
-          value: "true"
-        - name: agent.worker.initial.workerPools
-          value: "{test}"
+          value: "OctoTargetCF"
         - name: agent.deploymentTarget.enabled
           value: "true"
         - name: agent.deploymentTarget.initial.environments
@@ -37,7 +33,7 @@ spec:
           value: "{trident-web}"
   destination:
     name: in-cluster
-    namespace: octopus-worker
+    namespace: octopus-target
   syncPolicy:
     syncOptions:
       - CreateNamespace=true

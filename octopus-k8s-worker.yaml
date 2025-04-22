@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: octopus-k8s-agent
+  annotations:
+    codefresh.io/product: octo-agent
+spec:
+  project: default
+  source:
+    repoURL: registry-1.docker.io/octopusdeploy
+    chart: kubernetes-agent
+    targetRevision: "2.*.*"
+    helm:
+      releaseName: octoworkercf
+      parameters:
+        - name: agent.acceptEula
+          value: "Y"
+        - name: agent.space
+          value: "Default"
+        - name: agent.serverUrl
+          value: "https://johny.octopus.app/"
+        - name: agent.serverCommsAddresses[0]
+          value: "https://polling.johny.octopus.app/"
+        - name: agent.bearerToken
+          value: "eyJhbGciOiJQUzI1NiIsImtpZCI6IjRmOGY0MWZiN2M5MTQ4YjliMjk1MGYyMGMwYWNlMTU4IiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL2pvaG55Lm9jdG9wdXMuYXBwIiwiaXNzIjoiaHR0cHM6Ly9qb2hueS5vY3RvcHVzLmFwcCIsImV4cCI6MTc0NTMxODE0MSwiaWF0IjoxNzQ1MzE0NTQxLCJuYmYiOjE3NDUzMTQ1NDEsImp0aSI6IjBiMjgyNWY4ZWU5ZTQ2MDc5MDdlMDYxMTM5ZTRlNWY3Iiwic3ViIjoiN2RkNjAxZTItYWM5Yi00N2VjLTg5MDQtYjcyZjM3NzIyYTdhIn0.LvBF85Jl0PNjSytAptKqTNYYqs92H29xHNjz4Q_tyDHcpVNP5WM2iK4Te95yDDSaqR2yXs2pJGxbbYbTuRubOTspx3ivcWTydhIcTdu_LENGiMuMBneBIEXK854QNZvPwrifEK4mww98_o2oAtQv68dTkV5_KwL0l2M-5zjTSNMabiV4TBRSPOImu45jm0gVp8yZaWOniJ5LEyNrVSAdFYtgQAj7LTfwjybhYYwIsf_2EnOgiXqwFDtCZSF3-ouLGMAGhUxSMfLKsvuWgpEKR3KTfmXEKEYvkiatNF3n7GzJhnBXkgAWhOGgUHkxQkP6UJv251Q-g63hnytzmIt1ig"
+        - name: agent.name
+          value: "OctoWorkerCF"
+        - name: agent.worker.enabled
+          value: "true"
+        - name: agent.worker.initial.workerPools
+          value: "{test}"
+  destination:
+    name: in-cluster
+    namespace: octopus-worker
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+      - PrunePropagationPolicy=foreground
+      - ServerSideApply=true
+    automated:
+      prune: true
+      selfHeal: true
