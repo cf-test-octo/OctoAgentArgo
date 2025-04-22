@@ -7,11 +7,11 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/OctopusDeploy/helm-charts.git
-    targetRevision: 86578c16bc96d0b6a34ff234ce5d9eeb938d11d4
-    path: charts/kubernetes-agent
+    repoURL: registry-1.docker.io/octopusdeploy/kubernetes-agent
+    chart: kubernetes-agent
+    targetRevision: "2.*.*"
     helm:
-      releaseName: octopus-k8s-agent
+      releaseName: octoagentcf
       parameters:
         - name: agent.acceptEula
           value: "Y"
@@ -22,7 +22,7 @@ spec:
         - name: agent.serverCommsAddresses[0]
           value: "https://polling.johny.octopus.app/"
         - name: agent.bearerToken
-          value: "eyJhbGciOiJQUzI1NiIsImtpZCI6IjRmOGY0MWZiN2M5MTQ4YjliMjk1MGYyMGMwYWNlMTU4IiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL2pvaG55Lm9jdG9wdXMuYXBwIiwiaXNzIjoiaHR0cHM6Ly9qb2hueS5vY3RvcHVzLmFwcCIsImV4cCI6MTc0NDgxMzAyMCwiaWF0IjoxNzQ0ODA5NDIwLCJuYmYiOjE3NDQ4MDk0MjAsImp0aSI6IjMyZjZhZjY2M2E0YTQzOWM5ZmIzYWYxMGQ2N2UyZTg1Iiwic3ViIjoiN2RkNjAxZTItYWM5Yi00N2VjLTg5MDQtYjcyZjM3NzIyYTdhIn0.Q_81yQ_WjvkgQT5t-NowW4u5AAptS6n6xJ2FUVWY08G99LW197O05D2kwK58IZRD3TLrFnDb9WYxT-ZSK_H9EEFJHqrdU-kGl8X34E_09hItPY735Md3f7em8v4mphyI6jMxMWlIxzLmfA6OKn6Ktxntlx7fyt8tVR-Wt5R2Q_7W2XaZvrabVB1zyCjF7EXfLj44xxf0BO1cOLhWn2JewiC648DJjwu09D-VZn_IUfy5m-4uZkqfnQfV0BU42RCbapA7LXWwxB5NV1yd1KUmHJEDXfT_NVC55INUFsfg-MS_tWnaUYcY8-KKxKFbHC-xuj1jZttjxm6jaAw_6vd3Ig"
+          value: "eyJhbGciOiJQUzI1NiIsImtpZCI6IjRmOGY0MWZiN2M5MTQ4YjliMjk1MGYyMGMwYWNlMTU4IiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL2pvaG55Lm9jdG9wdXMuYXBwIiwiaXNzIjoiaHR0cHM6Ly9qb2hueS5vY3RvcHVzLmFwcCIsImV4cCI6MTc0NTMxODE0MSwiaWF0IjoxNzQ1MzE0NTQxLCJuYmYiOjE3NDUzMTQ1NDEsImp0aSI6IjBiMjgyNWY4ZWU5ZTQ2MDc5MDdlMDYxMTM5ZTRlNWY3Iiwic3ViIjoiN2RkNjAxZTItYWM5Yi00N2VjLTg5MDQtYjcyZjM3NzIyYTdhIn0.LvBF85Jl0PNjSytAptKqTNYYqs92H29xHNjz4Q_tyDHcpVNP5WM2iK4Te95yDDSaqR2yXs2pJGxbbYbTuRubOTspx3ivcWTydhIcTdu_LENGiMuMBneBIEXK854QNZvPwrifEK4mww98_o2oAtQv68dTkV5_KwL0l2M-5zjTSNMabiV4TBRSPOImu45jm0gVp8yZaWOniJ5LEyNrVSAdFYtgQAj7LTfwjybhYYwIsf_2EnOgiXqwFDtCZSF3-ouLGMAGhUxSMfLKsvuWgpEKR3KTfmXEKEYvkiatNF3n7GzJhnBXkgAWhOGgUHkxQkP6UJv251Q-g63hnytzmIt1ig"
         - name: agent.name
           value: "OctoAgentCF"
         - name: agent.worker.enabled
