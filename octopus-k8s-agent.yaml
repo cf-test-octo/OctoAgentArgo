@@ -28,7 +28,13 @@ spec:
         - name: agent.worker.enabled
           value: "true"
         - name: agent.worker.initial.workerPools
-          value: "{test}"  
+          value: "{test}"
+        - name: agent.deploymentTarget.enabled
+          value: "true"
+        - name: agent.deploymentTarget.initial.environments
+          value: "{development,test,staging,production}"
+        - name: agent.deploymentTarget.initial.tags
+          value: "{trident-web}"
   destination:
     name: in-cluster
     namespace: octopus-worker
