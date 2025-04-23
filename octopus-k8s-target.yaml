@@ -30,7 +30,7 @@ spec:
         - name: agent.deploymentTarget.initial.environments
           value: "{development,test,staging,production}"
         - name: agent.deploymentTarget.initial.tags
-          value: "{trident-web}"
+          value: "{k8s-cf}"
         - name: kubernetesMonitor.enabled
           value: "true"
         - name: kubernetesMonitor.registration.serverApiUrl
