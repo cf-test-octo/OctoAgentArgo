@@ -31,6 +31,19 @@ spec:
           value: "{development,test,staging,production}"
         - name: agent.deploymentTarget.initial.tags
           value: "{trident-web}"
+        - name: kubernetesMonitor.enabled
+          value: "true"
+        - name: kubernetesMonitor.registration.serverApiUrl
+          value: "https://johny.octopus.app/"
+        - name: kubernetesMonitor.monitor.serverGrpcUrl
+          value: "grpc://johny.octopus.app:8443"
+        - name: kubernetesMonitor.registration.serverAccessToken
+          value: "eyJhbGciOiJQUzI1NiIsImtpZCI6IjRmOGY0MWZiN2M5MTQ4YjliMjk1MGYyMGMwYWNlMTU4IiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL2pvaG55Lm9jdG9wdXMuYXBwIiwiaXNzIjoiaHR0cHM6Ly9qb2hueS5vY3RvcHVzLmFwcCIsImV4cCI6MTc0NTMxODE0MSwiaWF0IjoxNzQ1MzE0NTQxLCJuYmYiOjE3NDUzMTQ1NDEsImp0aSI6IjBiMjgyNWY4ZWU5ZTQ2MDc5MDdlMDYxMTM5ZTRlNWY3Iiwic3ViIjoiN2RkNjAxZTItYWM5Yi00N2VjLTg5MDQtYjcyZjM3NzIyYTdhIn0.LvBF85Jl0PNjSytAptKqTNYYqs92H29xHNjz4Q_tyDHcpVNP5WM2iK4Te95yDDSaqR2yXs2pJGxbbYbTuRubOTspx3ivcWTydhIcTdu_LENGiMuMBneBIEXK854QNZvPwrifEK4mww98_o2oAtQv68dTkV5_KwL0l2M-5zjTSNMabiV4TBRSPOImu45jm0gVp8yZaWOniJ5LEyNrVSAdFYtgQAj7LTfwjybhYYwIsf_2EnOgiXqwFDtCZSF3-ouLGMAGhUxSMfLKsvuWgpEKR3KTfmXEKEYvkiatNF3n7GzJhnBXkgAWhOGgUHkxQkP6UJv251Q-g63hnytzmIt1ig"
+        - name: kubernetesMonitor.registration.spaceId
+          value: "Spaces-1"
+        - name: kubernetesMonitor.registration.machineName
+          value: "OctoTargetCF"
+
   destination:
     name: in-cluster
     namespace: octopus-target
