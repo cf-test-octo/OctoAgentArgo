@@ -16,31 +16,31 @@ spec:
         - name: agent.acceptEula
           value: "Y"
         - name: agent.space
-          value: "Default"
+          value: "JohnyDemo"
         - name: agent.serverUrl
-          value: "https://johny.octopus.app/"
+          value: "https://demo.octopus.app/"
         - name: agent.serverCommsAddresses[0]
-          value: "https://polling.johny.octopus.app/"
+          value: "https://polling.demo.octopus.app/"
         - name: agent.bearerToken
-          value: "eyJhbGciOiJQUzI1NiIsImtpZCI6IjRmOGY0MWZiN2M5MTQ4YjliMjk1MGYyMGMwYWNlMTU4IiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL2pvaG55Lm9jdG9wdXMuYXBwIiwiaXNzIjoiaHR0cHM6Ly9qb2hueS5vY3RvcHVzLmFwcCIsImV4cCI6MTc0NTM5NjYzOCwiaWF0IjoxNzQ1MzkzMDM4LCJuYmYiOjE3NDUzOTMwMzgsImp0aSI6IjA4NGNlNjUyYzE2OTQ2M2U5MGFhYjE0YmIwOTkzNWQ4Iiwic3ViIjoiN2RkNjAxZTItYWM5Yi00N2VjLTg5MDQtYjcyZjM3NzIyYTdhIn0.UMZ0gbsHjjNU0DknL9gaZ4fTcVkoAXJIOoW2W4g31SQ34VQjOLae2zDmLvbl5Q8gZZB3S31_hkUzQKX16CLepLEHOaLXOiv3VQyc1QnMMDblfyDcUgcHvendWjZzyE2QwMT8AkLNmlR9IQ70ud_-wLnxCWQCjJpuDTj0Aqg-Jgk8vEFoLvy4OASE5Q1Q6_D7fU9hliA6b009t4SQd44Sjx4bVD5gtUOppIj6_AkMnAwAiq7c_b5EQNq3_o6M1BVfFXIaJUI9LY-1cYCdUwnRczLYkTHM1gUG2hxmythrVrupYv0E05JOtiGTIFC52lCHYaM52yat9ZIwfGJCTi9_JA"
+          value: "eyJhbGciOiJQUzI1NiIsImtpZCI6ImY1NGZiYmE5ZGVjMzQ3MTVhYjMyZWY2YTQ2ZGZhZThjIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL2RlbW8ub2N0b3B1cy5hcHAiLCJpc3MiOiJodHRwczovL2RlbW8ub2N0b3B1cy5hcHAiLCJleHAiOjE3NDU0OTU2MjIsImlhdCI6MTc0NTQ5MjAyMiwibmJmIjoxNzQ1NDkyMDIyLCJqdGkiOiI3MWIzMmYyYmJjMGY0NTM1YTliMmJjYjc4YjIyNTFiNiIsInN1YiI6ImYzOWZkMjUyLWI0ZGYtNGM1OS1hM2VhLWYxMDNkZThiMDYwZCJ9.WvYx6_k0KWsCS2brIrE6yX2vMVJ5KJebPn8bzYwAplPSgUO-JJ4XfTkQ3a4Jsv-ruRnYrk_9koeMAaxb3xXgl5BEvsrG5eqFehqZf7nWjQHSyOebItoUb7QCpHTk7WmvSYfnrqmQnkvjj8XQdAUGvtfSpymBI1dhB53GaYlKhcaHO-PvGa9Qsz4LeKCSKIEe94KtnF0YPNLjHVJx0Wi6Chkq4bujF4KeXHj5c1AKLSzj4lm7UYc7_hLu_fBr_c3dEJQn9S6CwlNDr6FOWm6nARHfzY_4ijdS68IP7R1_SuzJS3u6foOGv43DottOIGj3HujTlhmOjvfJ6n-W5FfB8g"
         - name: agent.name
           value: "OctoTargetCF"
         - name: agent.deploymentTarget.enabled
           value: "true"
         - name: agent.deploymentTarget.initial.environments
-          value: "{development,test,staging,production}"
+          value: "{development,test,production,dr}"
         - name: agent.deploymentTarget.initial.tags
           value: "{k8s-cf}"
         - name: kubernetesMonitor.enabled
           value: "true"
         - name: kubernetesMonitor.registration.serverApiUrl
-          value: "https://johny.octopus.app/"
+          value: "https://demo.octopus.app/"
         - name: kubernetesMonitor.monitor.serverGrpcUrl
-          value: "grpc://johny.octopus.app:8443"
+          value: "grpc://demo.octopus.app:8443"
         - name: kubernetesMonitor.registration.serverAccessToken
-          value: "eyJhbGciOiJQUzI1NiIsImtpZCI6IjRmOGY0MWZiN2M5MTQ4YjliMjk1MGYyMGMwYWNlMTU4IiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL2pvaG55Lm9jdG9wdXMuYXBwIiwiaXNzIjoiaHR0cHM6Ly9qb2hueS5vY3RvcHVzLmFwcCIsImV4cCI6MTc0NTM5NjYzOCwiaWF0IjoxNzQ1MzkzMDM4LCJuYmYiOjE3NDUzOTMwMzgsImp0aSI6IjA4NGNlNjUyYzE2OTQ2M2U5MGFhYjE0YmIwOTkzNWQ4Iiwic3ViIjoiN2RkNjAxZTItYWM5Yi00N2VjLTg5MDQtYjcyZjM3NzIyYTdhIn0.UMZ0gbsHjjNU0DknL9gaZ4fTcVkoAXJIOoW2W4g31SQ34VQjOLae2zDmLvbl5Q8gZZB3S31_hkUzQKX16CLepLEHOaLXOiv3VQyc1QnMMDblfyDcUgcHvendWjZzyE2QwMT8AkLNmlR9IQ70ud_-wLnxCWQCjJpuDTj0Aqg-Jgk8vEFoLvy4OASE5Q1Q6_D7fU9hliA6b009t4SQd44Sjx4bVD5gtUOppIj6_AkMnAwAiq7c_b5EQNq3_o6M1BVfFXIaJUI9LY-1cYCdUwnRczLYkTHM1gUG2hxmythrVrupYv0E05JOtiGTIFC52lCHYaM52yat9ZIwfGJCTi9_JA"
+          value: "eyJhbGciOiJQUzI1NiIsImtpZCI6ImY1NGZiYmE5ZGVjMzQ3MTVhYjMyZWY2YTQ2ZGZhZThjIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL2RlbW8ub2N0b3B1cy5hcHAiLCJpc3MiOiJodHRwczovL2RlbW8ub2N0b3B1cy5hcHAiLCJleHAiOjE3NDU0OTU2MjIsImlhdCI6MTc0NTQ5MjAyMiwibmJmIjoxNzQ1NDkyMDIyLCJqdGkiOiI3MWIzMmYyYmJjMGY0NTM1YTliMmJjYjc4YjIyNTFiNiIsInN1YiI6ImYzOWZkMjUyLWI0ZGYtNGM1OS1hM2VhLWYxMDNkZThiMDYwZCJ9.WvYx6_k0KWsCS2brIrE6yX2vMVJ5KJebPn8bzYwAplPSgUO-JJ4XfTkQ3a4Jsv-ruRnYrk_9koeMAaxb3xXgl5BEvsrG5eqFehqZf7nWjQHSyOebItoUb7QCpHTk7WmvSYfnrqmQnkvjj8XQdAUGvtfSpymBI1dhB53GaYlKhcaHO-PvGa9Qsz4LeKCSKIEe94KtnF0YPNLjHVJx0Wi6Chkq4bujF4KeXHj5c1AKLSzj4lm7UYc7_hLu_fBr_c3dEJQn9S6CwlNDr6FOWm6nARHfzY_4ijdS68IP7R1_SuzJS3u6foOGv43DottOIGj3HujTlhmOjvfJ6n-W5FfB8g"
         - name: kubernetesMonitor.registration.spaceId
-          value: "Spaces-1"
+          value: "Spaces-3087"
         - name: kubernetesMonitor.registration.machineName
           value: "OctoTargetCF"
 
