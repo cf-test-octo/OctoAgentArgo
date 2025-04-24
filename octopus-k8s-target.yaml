@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: octopus-k8s-target
+  name: octopus-k8s-target-cfk8s
   annotations:
     codefresh.io/product: octo-agent
 spec:
@@ -22,7 +22,7 @@ spec:
         - name: agent.serverCommsAddresses[0]
           value: "https://polling.demo.octopus.app/"
         - name: agent.bearerToken
-          value: "eyJhbGciOiJQUzI1NiIsImtpZCI6ImY1NGZiYmE5ZGVjMzQ3MTVhYjMyZWY2YTQ2ZGZhZThjIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL2RlbW8ub2N0b3B1cy5hcHAiLCJpc3MiOiJodHRwczovL2RlbW8ub2N0b3B1cy5hcHAiLCJleHAiOjE3NDU0OTczOTIsImlhdCI6MTc0NTQ5Mzc5MiwibmJmIjoxNzQ1NDkzNzkyLCJqdGkiOiIwMDA3NzkwZGE5ODE0MGVmYTc5MDk3MGJlZTUxMjExNiIsInN1YiI6ImYzOWZkMjUyLWI0ZGYtNGM1OS1hM2VhLWYxMDNkZThiMDYwZCJ9.szq6oumOVECnPRHSGBb3ZusZ8eN5Ko8-GfkyBf7SD5j3VPdLtMVmRJyWliEQKSL6WYLxuhL70uNJlCYDU1ufevL2zLLEpRJSo8558XtbeE6cYLGYajhk70YVV2Iq0Jmb_v8cxXHSoyqWHeRwdMpEtfKp5HkzhQgKlmkCFJ82SRq_oWcHVjtafMjcpERcP--5Huy3v4asotRvSDeZi0V2xloPlOuz-mzqhN5hPl0Rl84Fy-qowcvAh4yu6qUdX_bHWFSuy8njinu1HarVDLDYk-IDy6VMq_c05efyHnm4QN7E-nW9nRXd-8bMGTOKLeJ9j2JqBhLqztb2hXtYHMkxgg"
+          value: "eyJhbGciOiJQUzI1NiIsImtpZCI6ImY1NGZiYmE5ZGVjMzQ3MTVhYjMyZWY2YTQ2ZGZhZThjIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL2RlbW8ub2N0b3B1cy5hcHAiLCJpc3MiOiJodHRwczovL2RlbW8ub2N0b3B1cy5hcHAiLCJleHAiOjE3NDU1MDMyNDMsImlhdCI6MTc0NTQ5OTY0MywibmJmIjoxNzQ1NDk5NjQzLCJqdGkiOiJhZThmNjdjYjRmZGI0OTc3YTczOGY5YzVhMjY1MDQ0YiIsInN1YiI6ImYzOWZkMjUyLWI0ZGYtNGM1OS1hM2VhLWYxMDNkZThiMDYwZCJ9.HsXZuMiwLA_utIV_l44tIu7mHvPuebFKcxwOWphQ60Fm7Rt_zqVkATDuoAItsj6Rif_wavlrSMWNkpjsRukyNl6MbbgiRdNr5r08XjgivHH7csIw98AOyIgbZI5lSSCcdlidfUVHVK8SHRcYB2Ss3tJKShL-EqsXRexlvpZpvs2rCXOWfo88joTNeO308qO_j6GWcUQF2pyRm9gbeqa3Uev_hSoubSW1eNGBWUGwstv-Acpee65rJarvIvi_GdupO2e_MDIR8GVazxDkyRmQWbHIC9MJqVW8UpPy1s8R_nPsEg0xy8kWfZBwLAT8BeqCpai_1XInbj3Vfz6FU0Sstg"
         - name: agent.name
           value: "OctoTargetCFK8S"
         - name: agent.deploymentTarget.enabled
@@ -38,7 +38,7 @@ spec:
         - name: kubernetesMonitor.monitor.serverGrpcUrl
           value: "grpc://demo.octopus.app:8443"
         - name: kubernetesMonitor.registration.serverAccessToken
-          value: "eyJhbGciOiJQUzI1NiIsImtpZCI6ImY1NGZiYmE5ZGVjMzQ3MTVhYjMyZWY2YTQ2ZGZhZThjIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL2RlbW8ub2N0b3B1cy5hcHAiLCJpc3MiOiJodHRwczovL2RlbW8ub2N0b3B1cy5hcHAiLCJleHAiOjE3NDU0OTczOTIsImlhdCI6MTc0NTQ5Mzc5MiwibmJmIjoxNzQ1NDkzNzkyLCJqdGkiOiIwMDA3NzkwZGE5ODE0MGVmYTc5MDk3MGJlZTUxMjExNiIsInN1YiI6ImYzOWZkMjUyLWI0ZGYtNGM1OS1hM2VhLWYxMDNkZThiMDYwZCJ9.szq6oumOVECnPRHSGBb3ZusZ8eN5Ko8-GfkyBf7SD5j3VPdLtMVmRJyWliEQKSL6WYLxuhL70uNJlCYDU1ufevL2zLLEpRJSo8558XtbeE6cYLGYajhk70YVV2Iq0Jmb_v8cxXHSoyqWHeRwdMpEtfKp5HkzhQgKlmkCFJ82SRq_oWcHVjtafMjcpERcP--5Huy3v4asotRvSDeZi0V2xloPlOuz-mzqhN5hPl0Rl84Fy-qowcvAh4yu6qUdX_bHWFSuy8njinu1HarVDLDYk-IDy6VMq_c05efyHnm4QN7E-nW9nRXd-8bMGTOKLeJ9j2JqBhLqztb2hXtYHMkxgg"
+          value: "eyJhbGciOiJQUzI1NiIsImtpZCI6ImY1NGZiYmE5ZGVjMzQ3MTVhYjMyZWY2YTQ2ZGZhZThjIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL2RlbW8ub2N0b3B1cy5hcHAiLCJpc3MiOiJodHRwczovL2RlbW8ub2N0b3B1cy5hcHAiLCJleHAiOjE3NDU1MDMyNDMsImlhdCI6MTc0NTQ5OTY0MywibmJmIjoxNzQ1NDk5NjQzLCJqdGkiOiJhZThmNjdjYjRmZGI0OTc3YTczOGY5YzVhMjY1MDQ0YiIsInN1YiI6ImYzOWZkMjUyLWI0ZGYtNGM1OS1hM2VhLWYxMDNkZThiMDYwZCJ9.HsXZuMiwLA_utIV_l44tIu7mHvPuebFKcxwOWphQ60Fm7Rt_zqVkATDuoAItsj6Rif_wavlrSMWNkpjsRukyNl6MbbgiRdNr5r08XjgivHH7csIw98AOyIgbZI5lSSCcdlidfUVHVK8SHRcYB2Ss3tJKShL-EqsXRexlvpZpvs2rCXOWfo88joTNeO308qO_j6GWcUQF2pyRm9gbeqa3Uev_hSoubSW1eNGBWUGwstv-Acpee65rJarvIvi_GdupO2e_MDIR8GVazxDkyRmQWbHIC9MJqVW8UpPy1s8R_nPsEg0xy8kWfZBwLAT8BeqCpai_1XInbj3Vfz6FU0Sstg"
         - name: kubernetesMonitor.registration.spaceId
           value: "Spaces-3087"
         - name: kubernetesMonitor.registration.machineName
